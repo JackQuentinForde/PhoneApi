@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<IPhoneNumberRepository, PhoneNumberRepository>();
 
 builder.Services.AddScoped(s =>
     DbContextFactory.Create<PhoneDbContext>(

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Persistence.Repositories;
 
-namespace PhoneApi.Controllers
+namespace Api.Controllers
 {
     [ApiController]
     [Route("Account")]
@@ -19,6 +19,13 @@ namespace PhoneApi.Controllers
         public async Task<ActionResult> CreateAccount(string name)
         {
             await _accountRepository.CreateAccount(name);
+            return Ok();
+        }
+
+        [HttpPost("{id}/{active}/SetActive")]
+        public async Task<ActionResult> SetActive(int id, bool active)
+        {
+            await _accountRepository.SetActive(id, active);
             return Ok();
         }
     }
