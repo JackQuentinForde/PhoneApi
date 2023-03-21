@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Domain.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
 using Persistence.Repositories;
 
 namespace Api.Controllers
@@ -26,6 +28,25 @@ namespace Api.Controllers
                 await _phoneNumberRepository.CreatePhoneNumber(phoneNumber, accountId);
             }
             return Ok();
+        }
+
+        [HttpDelete("{id}/DeletePhoneNumber")]
+        public async Task<ActionResult> DeletePhoneNumber(int id)
+        {
+            await _phoneNumberRepository.DeletePhoneNumber(id);
+            return Ok();
+        }
+
+        [HttpGet("{id}/GetPhoneNumber")]
+        public async Task<ActionResult> GetPhoneNumber(int id)
+        {
+            return Ok(await _phoneNumberRepository.GetPhoneNumber(id));
+        }
+
+        [HttpGet("{accountId}/GetAll")]
+        public async Task<ActionResult> GetAll(int accountId)
+        {
+            return Ok(await _phoneNumberRepository.GetAll(accountId));
         }
     }
 }
