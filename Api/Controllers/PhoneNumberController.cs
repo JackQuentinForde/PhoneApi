@@ -1,12 +1,12 @@
-﻿using Domain.Entities;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Client;
 using Persistence.Repositories;
 
 namespace Api.Controllers
 {
     [ApiController]
     [Route("PhoneNumber")]
+    [Authorize("DefaultPolicy")]
     public class PhoneNumberController : ControllerBase
     {
         private readonly IPhoneNumberRepository _phoneNumberRepository;

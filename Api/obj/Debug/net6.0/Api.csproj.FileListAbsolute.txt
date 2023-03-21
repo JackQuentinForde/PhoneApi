@@ -257,3 +257,4 @@ C:\repos\PhoneApi\Api\obj\Debug\net6.0\refint\Api.dll
 C:\repos\PhoneApi\Api\obj\Debug\net6.0\Api.pdb
 C:\repos\PhoneApi\Api\obj\Debug\net6.0\Api.genruntimeconfig.cache
 C:\repos\PhoneApi\Api\obj\Debug\net6.0\ref\Api.dll
+C:\repos\PhoneApi\Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

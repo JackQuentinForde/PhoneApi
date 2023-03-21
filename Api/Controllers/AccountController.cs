@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Persistence.Repositories;
 
 namespace Api.Controllers
 {
     [ApiController]
     [Route("Account")]
+    [Authorize("DefaultPolicy")]
     public class AccountController : ControllerBase
     {
         private readonly IAccountRepository _accountRepository;
